@@ -1,5 +1,6 @@
 // i watched the cideo "javascript validation 
 let email = document.getElementById('email');
+let username = document.getElementsByTagName('username');
 let password= document.getElementById('password');
 let firstname= document.getElementById('fname');
 let lastName= document.getElementById('lname');
