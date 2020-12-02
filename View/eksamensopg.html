@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+ <head>
+
+    <link rel="stylesheet" href="eksamensopg.css">
+    <h1> Golden Dating </h1>
+ </head>
+
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <style type="text/css" media="screen">
+ @import url("css/layout.css");
+ </style>
+ </head>
+ <body>
+ <!--layout starts-->
+ <div id="layout">
+   <div id="layout_inner">
+     <!--header starts-->
+     <div id="header">
+       <!--  menu starts-->
+       <div id="menu">
+         <ul>
+           <li class="first"><a class="current" href="#">Home</a></li>
+           <li><a  href="login.html"> Log In</a></li>
+           <li><a href="about_us.html">About us</a></li>
+           <li><a href="services.html">Services</a></li>
+           <li><a href="contact_us.html">Contact Us</a></li>
+         </ul>
+       </div>
+
+
+<body>
+  <div id= "error"></div>
+<form>
+    <table>
+        <tr>
+            <td>
+                <label for= "email"> Enter your email: </label><br><br>
+                    <input placeholder= "Type in email" type= "email" id="email" required autofocus><br><br>
+                    <p id = message1></p>
+                <label for= "password>"> Password: </label><br>
+                     <input placeholder= "Type in password" type= "Password" id="password" name="Password":></input><br><br>
+                     <p id = message2></p>
+                <label for="fname" >First name: </label><br>
+                       <input placeholder= "Type in firstname" type= "firstname" id="fname" name="fname" required><br><br>
+                <label for= "lname"> Last name:</label><br>
+                      <input placeholder= "Type in lastname" type= "lastname" id="lname" name="lname" required><br><br>
+                <label for="Birthday">Birthday:</label><br>
+                       <input placeholder= "Type in birthday" type= "birthday" id="birthday" name="birthday" required><br><br>
+                <label for="CPR">CPR:</label><br>
+                       <input placeholder= "Type in cpr" type= "text" id ="cpr" name="cpr" required><br><br>
+
+
+                 <label for="gender">Choose gender:</label> <br>
+                            <select name="gender" id="gender">
+                              <option value=  disabled selected></option>
+                              <option value="female">Female</option>
+                              <option value="male">Male</option>
+                              <option value="other">Other</option>
+                            </select>
+                            <br>
+                            <button onclick="validering()" type="submit" id="submit">Submit</button>
+                            <br> <br>
+                            <label action="/action_page.php">Billede:</label>
+                              <br>
+                              <input type="file" name="filename" id="filename" accept="image/*">
+                            
+                      </form>
+    <script src="eksamensopg.js"></script> 
+     </table>
+</form>
+</body>
+</html>

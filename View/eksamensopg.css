@@ -1,0 +1,14 @@
+body{ margin:0px; color:black; font:11px/13px "Tahoma", Arial, Helvetica, sans-serif; background:gold url(../images/body_bg.gif) repeat-x 0 0}
+img{border:none}
+.clear{clear:both}
+*{margin:0; padding:0}
+
+header {}
+
+#menu{float:left; width:780px; padding:10px 0 250px 0}
+#menu ul{float:left; width:500px; list-style:none; margin:0; padding:0 0 0 280px}
+#menu li{width:auto; display:inline; font-weight:bold; font-size:11px; line-height:13px; color:#386db2; padding:0 9px; background:url(../images/menu_border.gif) no-repeat 0 2px}
+#menu li a{color:darkgreen; text-decoration:none;}
+#menu li a:hover{color:darkgreen; text-decoration:underline;}
+#menu li a.current{color:darkgreen; text-decoration:none}
+#menu li.first{ background:none; padding:0 9px 0 0}
