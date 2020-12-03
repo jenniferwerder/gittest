@@ -3,6 +3,8 @@ import express from 'express';
 import bodyParser from 'body-parser';
 
 import usersRoutes from './router.js';
+//var expressValidator = require ('express-validator);
+
 
 const app = express();
 const PORT = 5000;
