@@ -3,7 +3,7 @@ import express from 'express';
 // creates the string/library/the name refers to it/popular id
 import { v4 as uuidv4 } from "uuid";
 
-import router from  express.Router();
+const router = express.Router();
 
 let users = [];
 //why dark diown (req)?
@@ -50,4 +50,4 @@ router.patch("/:id", (req, res) => {
   res.send(`User with the id ${id} has been updated`);
 });
 
-// export default router;
+ export default router;
