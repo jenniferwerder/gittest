@@ -1,6 +1,5 @@
-import user from './user';
 
-export class interests extends user{
+export class interests {
     constructor (user, interests) {
         super(user);
         user.interests = interests; 
