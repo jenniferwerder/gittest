@@ -1,4 +1,4 @@
-const express = require('express');
+/*const express = require('express');
 var router= express ();
 //fyll i '/model/'
 const match= require('../Model/')
@@ -11,4 +11,4 @@ function matchfunction(req,res){
 //korrekt nedan?
 module.exports = matchfunction
 
-//function, variable --> change 
+//function, variable --> change*/

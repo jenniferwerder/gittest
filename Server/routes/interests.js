@@ -1,9 +1,9 @@
 import express from 'express';
-import router from './router';
+import routers from '../Controllers/user.js';
 
-import { getInterests, postInterests, getInterests, deleteInterests, patchInterests } from '../../Modul/interests';
+import { getInterests, postInterests, getIdInterests, deleteInterests, patchInterests } from '../../Modul/interests.js';
 
-const router = express.Router();
+let router = express.Router();
 
 router.get('/', getInterests);
 router.post('/', postInterests);

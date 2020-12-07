@@ -1,9 +1,9 @@
 
 //userID??? ––– changed it to a huvudklass
 export class match {
-    constructor(matchname1, matchname2) {
-        this.matchname1 = matchname1;
-        this.matchname2 = matchname2;
+    constructor(matchId1, matchId2) {
+        this.matchId1 = matchId1;
+        this.matchId2 = matchId2;
         
 
     }

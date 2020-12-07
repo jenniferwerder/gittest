@@ -1,12 +1,12 @@
 {
-  "type": "module",
   "name": "gittest",
+  "type":"module",
   "version": "1.0.0",
   "description": "",
-  "main": "placeholder.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon"
+    "start": "nodemon index.js"
   },
   "author": "",
   "license": "ISC",

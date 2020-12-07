@@ -1,16 +1,17 @@
 
-import express from 'express';
-import users from '../Controllers/signup.js';
+//SIGNUP PAGE
+// skilnnad mellan get och post ( vad man skapar)
+//get= det man redan vet finns 
+//post = skapar något nytt 
+//kan göra om det finns fler av samma email
+import { v4  as uuidv4 } from "uuid";
 
-const router = express.Router();
 
 
 router.get("/", function(req, res, next) {
     res.render('index', { title: 'Form Validation', success: req.session.success, errors: req.session.errors});
     req.session.errors = null;
-    console.log('getsignup')
-  
-});
+  });
   
   // the string must match the name in the html.doc
   router.post("/submit", function(req, res, next) {
@@ -32,7 +33,4 @@ router.get("/", function(req, res, next) {
     res.redirect('/');
   
   });
-  
-  
- export default router;
   

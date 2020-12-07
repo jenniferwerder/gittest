@@ -3,21 +3,11 @@
  <head>
 <!---name=access endpoints-->
     <link rel="stylesheet" href="SignUp.css">
-    <h1>Golden Dating</h1>
-    {{# if success }}
-    <section class="success">
-      <h2> Successful Validation!</h2>
-    </section>
-    {{ else }}
-    {{# if errors }}
-    <section class="errors">
-<ul>
-  {{# each errors }}
-   <li>{{ this.message }}</li>
-   {{/each}}
-</ul>
-  </section>
-    {{if}}
+    <script src="SignUp.js"></script> 
+  </head>
+
+    <body>
+      <h1>Golden Dating</h1>
     <form>
       <table>
           <tr>
@@ -55,7 +45,8 @@
                               
                     
                         </form>
-    {{if}}
+
+
     <!--
  </head>
 
@@ -105,11 +96,11 @@
                               <option value="other">Other</option>
                             </select>
                             <br>
-                            <button onclick="validering()" type="submit" id="submit">Create an account</button> 
+                            <button onclick="validering()" type="submit" id="submit">Sign Up</button> 
                             
                             <br> <br>
                            
-    <script src="SignUp.js"></script> 
+ 
      </table>
 </form>
 </body>

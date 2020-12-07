@@ -1,4 +1,7 @@
 // i watched the cideo "javascript validation 
+
+function validering(){
+
 let email = document.getElementById('email');
 let username = document.getElementsByTagName('username');
 let password= document.getElementById('password');
@@ -7,13 +10,24 @@ let lastName= document.getElementById('lname');
 let birthday= document.getElementById('birthday');
 let cpr= document.getElementById('cpr');
 let gender= document.getElementById('gender');
-var message1 = document.getElementById("message1");
-var message2 = document.getElementById("message2");
 
-function validering(){
+const SignUpUser = { username, password }
+
+// alert user 
+
+const options = {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+
+    },
+    body: JSON.stringify(SignUpUser)
+};
+//fetch = contact the API
+
     if(email.value==0){
     alert("Put in email");
-    } else if (!email.value.match("@")); {
+    } else if (!email.value.match("@")) {
     alert("Invalid email!");
     };
 
@@ -50,5 +64,15 @@ password.addEventListener("keyup", function passwordValidation() {
     if (!password.value.match(/[A-Z]/)) {
         message2.innerHTML = "Password must to contain at least one capital letter";
     } else { message2.innerHTML = "";
-    };
+    }; 
+
+
 });
+//anropar, response 
+fetch ('http://localhost:5000/signup') 
+    .then(response => response)
+    .then(data => console.log(data));
+
+
+
+

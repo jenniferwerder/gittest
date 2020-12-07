@@ -1,4 +1,4 @@
-const express = require('express');
+/*const express = require('express');
 var router= express ();
 //fyll i '/model/'
 const interest= require('../Model/')
@@ -9,4 +9,4 @@ function interestfunction(req,res){
     res.json(interest.interestArray)
 }
 //korrekt?
-module.exports = interestfunction
+module.exports = interestsfunction*/
