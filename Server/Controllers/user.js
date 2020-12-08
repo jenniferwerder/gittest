@@ -6,7 +6,7 @@ let users = JSON.parse(usersStorage);
 
 //import { json } from "body-parser";
 import { v4  as uuidv4 } from "uuid";
-import { user } from "../../Modul/user.js";
+//import { user } from "../../Modul/user.js";
 
 //temporary database
 //let users = []

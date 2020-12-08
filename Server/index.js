@@ -4,7 +4,7 @@ import bodyParser from 'body-parser';
 
 import usersRoutes from './routes/user.js';
 import userMatches from './routes/matches.js';
-import usersInterests from './routes/interests.js';
+//import usersInterests from './routes/interests.js';
 
 
 //var expressValidator = require ('express-validator);

@@ -66,6 +66,8 @@ password.addEventListener("keyup", function passwordValidation() {
     } else { message2.innerHTML = "";
     }; 
 
+   //do the addeventlistener
+
 
 });
 //anropar, response 
