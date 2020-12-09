@@ -3,8 +3,8 @@
 let rawdata = fs.readFileSync('json.json')
 let json = JSON.parse(rawdata);*/
 
-export class user {
-    constructor (firstName, lastName, phoneNumber, age, gender, email, location, work, education){
+class user {
+    constructor (firstName, lastName, phoneNumber, age, gender, email, location, work, education, interestsGender){
     //define them, they are thrown away from the constructor
     this.firstName = firstName;
     this.lastName = lastName;
@@ -15,9 +15,14 @@ export class user {
     this.location = location;
     this.work = work;
     this.education= education;
+    this.interestsGender=interestsGender;
+
+} 
 
 }
-}
+module.exports = {
+    user,
+  
+  }
 
-console.log(user);
 

@@ -1,18 +1,23 @@
-import express from 'express';
-
-import * as match from '../Controllers/matches.js';
-//import {getMatch, postMatch, getIdMatch, deleteMatch, patchMatch} from '../Controllers/matches.js';
-
-
+const express = require ('express');
 const router = express.Router();
 
-router.get("/", getMatch);
-router.post("/", postMatch);
-router.get("/:id", getIdMatch);
-router.delete("/:id", deleteMatch);
+
+const match = require ('../Controllers/matches.js')
+
+
+
+router.get("/", match.getMatch);
+router.post("/", match.postMatch);
+router.get("/:id", match.getIdMatch);
+router.delete("/:id", match.deleteMatch);
 //router.patch("/:id", patchMatch);
 
 
 
-export default router;
+module.exports = {
+router,
+}
 
+
+//import * as match from '../Controllers/matches.js';
+//import {getMatch, postMatch, getIdMatch, deleteMatch, patchMatch} from '../Controllers/matches.js';

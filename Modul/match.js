@@ -1,6 +1,6 @@
 
 //userID??? ––– changed it to a huvudklass
-export class match {
+class match {
     constructor(matchId1, matchId2, matchId) {
         this.matchId = matchId;
         this.matchId1 = matchId1;
@@ -10,6 +10,10 @@ export class match {
     }
 }
 
+module.exports = {
+    match
+
+}
 // all the users (with attributes etc)
 
 

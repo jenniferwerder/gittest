@@ -1,22 +1,24 @@
 //import express from 'express'; 
 // creates the string/library/the name refers to it/popular id
 //instad of using "const match[]"
-const fs = require('fs');
-let usersStorage = fs.readFileSync('./Storage/json.json', "utf8"); 
-let matches = JSON.parse(usersStorage);
+//import * as fs from 'fs';
 
-import { v4  as uuidv4 } from "uuid";
+const fs = require ('fs');
+//let usersStorage = fs.readFileSync('./Storage/json.json', "utf8"); 
+//let matches = JSON.parse(usersStorage);
+
+const { v4: uuidv4 } = require ('uuid');
 //import { match } from '../../Modul/match';
 
 
-export const getMatch = (req, res) => {
+function getMatch (req, res) {
   //console.log(match);
   res.send(match);
   };
   
-export const postMatch = (req, res) => {
+function postMatch (req, res) {
   const match = req.body;
-  const matchWithId = {...match, id: uuidv4()};
+  const matchWithId = {...match, id: uuidv4()}; //matchwithID
   match.push({ ...match, id: uuidv4() }); //or MATCHES instead?
   res.send(posted);
 
@@ -24,7 +26,7 @@ export const postMatch = (req, res) => {
    
 };
 
-export const getIdMatch = (req, res) => {
+function getIdMatch (req, res) {
   const { id } = req.params;
 
   const foundMatch = matches.find((match) => match.id == id);
@@ -33,7 +35,7 @@ export const getIdMatch = (req, res) => {
 
 }
 
-export const deleteMatch = (req, res) => {
+ function deleteMatch (req, res) {
     const { id } = req.params;
   
     matches = matches.filter((match) => (match.id = !id));
@@ -42,7 +44,12 @@ export const deleteMatch = (req, res) => {
   };
 
 
-  
+  module.exports = {
+    getMatch, 
+    postMatch, 
+    getIdMatch, 
+    deleteMatch 
+  };
 
 
 

@@ -1,11 +1,11 @@
+const fs = require("fs");
 
-//import { } from "../../Storage/json.json"
-const fs = require('fs');
-let usersStorage = fs.readFileSync('./Storage/json.json', "utf8"); 
+let usersStorage = fs.readFileSync("../Storage/json.json", "utf8");
 let users = JSON.parse(usersStorage);
 
+let user = require("../../Modul/user.js");
 //import { json } from "body-parser";
-import { v4  as uuidv4 } from "uuid";
+const { v4: uuidv4 } = require("uuid");
 //import { user } from "../../Modul/user.js";
 
 //temporary database
@@ -13,41 +13,42 @@ import { v4  as uuidv4 } from "uuid";
 //why dark diown (req)?
 
 //router 2 (från början)
-export const getUser = (req, res) => {
+function getUsers(req, res) {  
+  //Rename this to getUsers
   console.log(users);
   res.send(users);
-};
+  
+}
 
 //post 2 (från början)
 //wanna req the body
-export const postUser = (req, res) => {
-  const user = req.body;
+function postUsers(req, res) {
+  let user = req.body;
+  user['id'] = uuidv4()
+  //make an extra id, and push it in
+  users.push({ ...user });
+  console.log(users);
+  res.send(`User with the username ${user.name} and i ${user.id} added to the database!`);
+}
 
-  //make an extra id, and push it in 
-  users.push({ ...user, id: uuidv4() });
-
-  res.send(`User with the username ${user.firstName} added to the database!`);
-};
-
-export const getIdUser = (req, res) => {
+function getIdUsers(req, res) {
   const { id } = req.params;
 
-  const foundUser = users.find((user) => user.id == id);
+  const foundUsers = users.find((user) => user.id == id);
 
-  res.send(foundUser);
-};
+  res.send(foundUsers);
+}
 
-export const deleteUser = (req, res) => {
+function deleteUsers(req, res) {
   const { id } = req.params;
 
   users = users.filter((user) => (user.id = !id));
 
   res.send(`User with the id ${id} deleted from the database.`);
-};
+}
 //first one matches, returns it
 
-
-export const patchUser = (req, res) => {
+function patchUsers(req, res) {
   const { id } = req.params;
   const { firstName, lastName, age } = req.body;
 
@@ -58,11 +59,16 @@ export const patchUser = (req, res) => {
   if (age) user.age = age;
 
   res.send(`User with the id ${id} has been updated`);
+}
+
+//to do a function
+module.exports = {
+  getUsers,
+  postUsers,
+  getIdUsers,
+  deleteUsers,
+  patchUsers,
 };
 
 
-//to do a function
 
-
- //export default router;
- 

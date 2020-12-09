@@ -1,27 +1,36 @@
 //server
-import express from 'express';
-import bodyParser from 'body-parser';
+const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const router = express.Router();
 
-import usersRoutes from './routes/user.js';
-import userMatches from './routes/matches.js';
-//import usersInterests from './routes/interests.js';
+const server = express();
+const PORT = 5000;
 
+const user = require ('./routes/user.js');
+const matches = require ('./routes/matches.js');
+//const interests = require('./routes/interests.js);
 
 //var expressValidator = require ('express-validator);
 
-const app = express();
-const PORT = 5000;
-const fs = require ('fs'); //get the file system
-
 //changing input to json
-app.use(bodyParser.json());   //use rroutes for example 
-app.use('/user', usersRoutes);
-app.use('/match', userMatches);
-app.use('/interest', usersInterests);
+server.use(bodyParser.json());   //use rroutes for example 
+server.use ('/users', user.router);
+server.use('/view', express.static('./view/'));
+server.use('/match', matches.router);
+server.use('/interest', user.router);
 
 // added function
-app.get('/', (req, res) => { res.send('Hello from HomePage'); });
-app.listen(PORT, () => console.log(`Server running on port: http://localhost:${PORT}`));
+server.get('/', (req, res) => { res.send('Hello from HomePage'); });
+server.listen(PORT, () => console.log(`Server running on port: http://localhost:${PORT}`));
+
+/*module.exports = {
+    userRoutes, 
+    postMatch, 
+    usersInterests, 
+  };*/
+
+
 
 
 

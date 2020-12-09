@@ -1,18 +1,20 @@
-import express from 'express';
-
-import * as user from '../Controllers/user.js';
-
-//controller 
-
+const express = require ('express');
 const router = express.Router();
 
-
-router.get("/", user.getUser);
-router.post("/", user.postUser);
-router.get("/:id", user.getIdUser);
-router.delete("/:id", user.deleteUser);
-router.patch("/:id", user.patchUser);
+const user = require ('../Controllers/user.js')
 
 
-export default router;
- 
+//starting with user, already been declated in the index file
+router.get("/", user.getUsers);
+router.post("/", user.postUsers);
+router.get("/:id", user.getIdUsers);
+router.delete("/:id", user.deleteUsers);
+router.patch("/:id", user.patchUsers);
+
+ 
+module.exports = {
+    router,
+
+}
+/*import express from 'express';
+import * as user from '../Controllers/user.js';*/

@@ -1,42 +1,98 @@
 [
     {
-"firstName": "John",
-"lastName": "Doe",
-"age": 25,
-"id": ,
+        "firstName": "John",
+        "lastName": "Hansson",
+        "age": 22,
+        "phonenumber": "0736242449",
+        "gender": "male",
+        "email": "jh@gmail.com",
+        "location": "London",
+        "work": "salesman",
+        "education": "CBS",
+        "interestsGender": "female",
+        "id": "52664afa-0461-4784-bdc6-adf43c40f944"
+    },
 
-},
-
-{
-"firstName": "Jane",
-"lastName": "Doe",
-"age": 24,
-"id": ,
-},
-
-{
-"firstName": "Johanna",
-"lastName": "Doe",
-"age": 35,
-"id": ,
-    
-},
-
-{
-"firstName": "Mikkel",
-"lastName": "Hansson",
-"age": 40,
-"id": ,
-    
-},
-
-{
-    "firstName": "Josefine",
-    "lastName": "Svesson",
-    "age": 50,
-    "id": ,
+    {
+        "firstName": "Hannah",
+        "lastName": "Hansson",
+        "age": 7,
+        "phonenumber": "0736249849",
+        "gender": "female",
+        "email": "hh@gmail.com",
+        "location": "Lund",
+        "work": "nurse",
+        "education": "Lund",
+        "interestsGender": "male",
+        "id": "16362e51-fb5e-49fe-ada7-1efabe23e851"
         
     },
 
+    {
+        "firstName": "Jakob",
+        "lastName": "Petersson",
+        "age": 9,
+        "phonenumber": "0736249855",
+        "gender": "male",
+        "email": "jp@gmail.com",
+        "location": "Malmo",
+        "work": "cashier",
+        "education": "Malmo",
+        "interestsGender": "female",
+        "id": "66f4a3fd-a3a9-4fa7-bfb0-4f5dda1eaa68"
+        
+        
+    },
+
+    {
+        "firstName": "Siri",
+        "lastName": "Olsson",
+        "age": 22,
+        "phonenumber": "0736249855",
+        "gender": "female",
+        "email": "so@gmail.com",
+        "location": "Copenhagen",
+        "work": "finance",
+        "education": "Malmo",
+        "interestsGender": "male",
+        "id": "2c4f1166-d099-43d5-9a60-a1ec15a6347d"
+        
+        
+    },
+
+
+    {
+        "firstName": "Martin",
+        "lastName": "Koloso",
+        "age": 29,
+        "phonenumber": "0736249765",
+        "gender": "male",
+        "email": "mk@gmail.com",
+        "location": "Copenhagen",
+        "work": "marketing",
+        "education": "Stockholm",
+        "interestsGender": "female",
+        "id": " d944465b-a787-4b44-82ac-1f2490768940"
+        
+        
+    },
+
+{
+        "firstName": "Stina",
+        "lastName": "Karlsson",
+        "age": 26,
+        "phonenumber": "0736242265",
+        "gender": "female",
+        "email": "sk@gmail.com",
+        "location": "Svedala",
+        "work": "controller",
+        "education": "KTH",
+        "interestsGender": "male",
+        "id":"83d5d455-648a-4d68-a6a6-5457c1331758"
+        
+        
+    }
+
+ 
 
 ]
