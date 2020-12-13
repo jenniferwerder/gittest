@@ -1,37 +1,40 @@
 
-/*function getInfo() {
-var email = document.getElementById('email/username').value
-var password = document.getElementById('password').value
+function myFunction() {
 
-for (i = 0; < objPeople.length; i++) {
-    if(email == objPeople[i].username && password == objPeople[i].password){
-    
-    }
-}*/
-
-    fetch(´http://localhost:5000/users${email}´)
+    /*let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+    fetch(`http://localhost:5000/users${email}`)
     .then(response => response.json()) //convert to JSON
-    .then(data => {
-        if (email === "user")
-        
-    }
+    .then(data) => {
 
+    if (document.getElementById("password") == password) {
+      alert ("success");
+    } else {
+        alert ("Invalid passord");
 
-    
+      /*console.log("Failure");
+      console.log(password);
+      console.log(document.getElementById("password"));
+    }*/
 
-    /*function checkUserInput(userInput){
-    if(users.indexOf(userInput) > -1){
-        alert("You are logged in");
-        return;
-      }
-      else{
-        alert("Invalid username, please try again or if you are new register");
-        return;    
-        
+    fetch(`http://localhost:5000/user/${email}`)
+    .then((response) => response.json())
+    .then((data) => {
      
-    } */
-             
+     
+    if (document.getElementById("password") == password) {
+        alert ("success");
+    } else {
+          alert ("Invalid passord");
+
+  function submission(){
+    let email = document.getElementByID = "email";
+    let password = document.getElementByID = "password";
+    
   
-}
-  
+    let email = new Array();
+    let password = new Array();
+  }
+
+ 
   

@@ -5,13 +5,13 @@ function validering(){
 let email = document.getElementById('email');
 let username = document.getElementsByTagName('username');
 let password= document.getElementById('password');
-let firstname= document.getElementById('fname');
+let firstName= document.getElementById('fname');
 let lastName= document.getElementById('lname');
 let birthday= document.getElementById('birthday');
 let cpr= document.getElementById('cpr');
 let gender= document.getElementById('gender');
 
-const SignUpUser = { username, password }
+const SignUpUser = { email, password }
 
 // alert user 
 
