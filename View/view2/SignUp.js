@@ -9,9 +9,10 @@ let firstName= document.getElementById('firstName').value;
 let lastName= document.getElementById('lastName').value;
 let birthday= document.getElementById('birthday').value;
 let cpr= document.getElementById('cpr').value;
-let gender= document.getElementById('gender').value;
+//let gender= document.getElementById('gender').value;
 
-const SignUpUser = { email, username, password, firstName, lastName, birthday, cpr, gender}
+//fill in gender later on
+const SignUpUser = { email, username, password, firstName, lastName, birthday, cpr}
 
 const options = {
     method: 'POST',
