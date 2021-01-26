@@ -2,18 +2,16 @@
 
 function validering(){
 
-let email = document.getElementById('email');
-let username = document.getElementsByTagName('username');
-let password= document.getElementById('password');
-let firstName= document.getElementById('fname');
-let lastName= document.getElementById('lname');
-let birthday= document.getElementById('birthday');
-let cpr= document.getElementById('cpr');
-let gender= document.getElementById('gender');
+let email = document.getElementById('email').value;
+let username = document.getElementsByTagName('username').value;
+let password= document.getElementById('password').value;
+let firstName= document.getElementById('firstName').value;
+let lastName= document.getElementById('lastName').value;
+let birthday= document.getElementById('birthday').value;
+let cpr= document.getElementById('cpr').value;
+let gender= document.getElementById('gender').value;
 
-const SignUpUser = { email, password }
-
-// alert user 
+const SignUpUser = { email, username, password, firstName, lastName, birthday, cpr, gender}
 
 const options = {
     method: 'POST',
@@ -24,8 +22,9 @@ const options = {
     body: JSON.stringify(SignUpUser)
 };
 //fetch = contact the API
+fetch('http://localhost:5000/users', options);
 
-    if(email.value==0){
+/*    if(email.value==0){
     alert("Put in email");
     } else if (!email.value.match("@")) {
     alert("Invalid email!");
@@ -68,12 +67,8 @@ password.addEventListener("keyup", function passwordValidation() {
 
    //do the addeventlistener
 
-
-});
-//anropar, response 
-fetch ('http://localhost:5000/signup') 
-    .then(response => response)
-    .then(data => console.log(data));
+*/
+};
 
 
 

@@ -15,8 +15,9 @@ const matches = require ('./routes/matches.js');
 
 //changing input to json
 server.use(bodyParser.json());   //use rroutes for example 
+server.use (express.static("../View/eksamensopg.html"))
 server.use ('/users', user.router);
-server.use('/view', express.static('./view/'));
+//server.use('/view', express.static('./view/'));
 server.use('/match', matches.router);
 server.use('/interest', user.router);
 

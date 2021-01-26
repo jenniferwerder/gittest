@@ -1,4 +1,5 @@
 const fs = require("fs");
+const database = require('../../Storage/SaveUser.js')
 
 let usersStorage = fs.readFileSync("../Storage/json.json", "utf8");
 let users = JSON.parse(usersStorage);
@@ -26,8 +27,9 @@ function postUsers(req, res) {
   let user = req.body;
   user['id'] = uuidv4()
   //make an extra id, and push it in
-  users.push({ ...user });
-  console.log(users);
+  /*users.push({ ...user });
+  console.log(users);*/
+  database.insertNewUser(user)
   res.send(`User with the username ${user.name} and i ${user.id} added to the database!`);
 }
 
@@ -42,7 +44,8 @@ function getIdUsers(req, res) {
 function deleteUsers(req, res) {
   const { id } = req.params;
 
-  users = users.filter((user) => (user.id = !id));
+//users = users.filter((user) => (user.id = !id));
+  database.removeNewUser(id)
 
   res.send(`User with the id ${id} deleted from the database.`);
 }
@@ -50,13 +53,19 @@ function deleteUsers(req, res) {
 
 function patchUsers(req, res) {
   const { id } = req.params;
-  const { firstName, lastName, age } = req.body;
+  const userInformation = req.body;
 
-  const user = users.find((user) => user.id == id);
+  //combining this information with the other = one id
+  userInformation.id = id
+
+  database.updateNewUser(userInformation)
+
+
+  /*const user = users.find((user) => user.id == id);
 
   if (firstName) user.firstName = firstName;
   if (lastName) user.lastName = lastName;
-  if (age) user.age = age;
+  if (age) user.age = age;*/
 
   res.send(`User with the id ${id} has been updated`);
 }
