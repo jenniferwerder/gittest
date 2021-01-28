@@ -7,6 +7,7 @@ let users = JSON.parse(usersStorage);
 let user = require("../../Modul/user.js");
 //import { json } from "body-parser";
 const { v4: uuidv4 } = require("uuid");
+const { stringify } = require("querystring");
 //import { user } from "../../Modul/user.js";
 
 //temporary database
@@ -24,13 +25,25 @@ function getUsers(req, res) {
 //post 2 (från början)
 //wanna req the body
 function postUsers(req, res) {
-  let user = req.body;
-  user['id'] = uuidv4()
+  //console.log(req)
+  //let user = 
+   
+    /*firstName = req.body.firstName,
+    lastName = req.body.lastName,
+    email = req.body.email,
+    password = req.body.password,
+    cpr = req.body.cpr,
+    age = req.body.age 
+  }*/
+let user = req.body;
+ user['id'] = uuidv4()
+ //user ['firstName'] = req.body.firstName
   //make an extra id, and push it in
   /*users.push({ ...user });
   console.log(users);*/
+ console.log(req.body)
   database.insertNewUser(user)
-  res.send(`User with the username ${user.name} and i ${user.id} added to the database!`);
+  res.send(`User with the username ${user.firstName} and i ${user.id} added to the database!`);
 }
 
 function getIdUsers(req, res) {

@@ -1,7 +1,31 @@
+//fetch = contact the API
+
+console.log('fegegeg')
+function SignUp (){
+let email = document.getElementById('email').value;
+let password= document.getElementById('password').value;
+let firstName= document.getElementById('firstName').value;
+let lastName= document.getElementById('lastName').value;
+let age= document.getElementById('age').value;
+let cpr= document.getElementById('cpr').value;
+
+
+//make an object
+user = {email:email, password, firstName, lastName, age, cpr}
+
+//console.log(user)
+let options = {
+    method: 'POST',
+    headers:{
+        'Content-Type': 'application/JSON'
+    },
+    body: JSON.stringify (user)
+}
 // i watched the cideo "javascript validation 
+fetch('http://localhost:5000/users', options);
 
-function validering(){
-
+} 
+/*function validering(){
 let email = document.getElementById('email').value;
 let username = document.getElementsByTagName('username').value;
 let password= document.getElementById('password').value;
@@ -22,8 +46,7 @@ const options = {
     },
     body: JSON.stringify(SignUpUser)
 };
-//fetch = contact the API
-fetch('http://localhost:5000/users', options);
+
 
 /*    if(email.value==0){
     alert("Put in email");
@@ -68,8 +91,8 @@ password.addEventListener("keyup", function passwordValidation() {
 
    //do the addeventlistener
 
-*/
-};
+
+};*/
 
 
 
