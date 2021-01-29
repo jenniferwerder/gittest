@@ -1,3 +1,6 @@
+var Datastore = require ('nedb')
+, db = new Datastore ({ filename: '../Storage/UserInformation.db', autoload: false});
+
 const fs = require("fs");
 const database = require('../../Storage/SaveUser.js')
 
@@ -16,11 +19,19 @@ const { stringify } = require("querystring");
 
 //router 2 (från början)
 function getUsers(req, res) {  
-  //Rename this to getUsers
+  /*Rename this to getUsers
   console.log(users);
-  res.send(users);
-  
+  res.send(users);*/
+  //load data everytime, it must see if you get a new user etc --> get function 
+  //why not in the database? --> transfer information (optimal, it would be with the others)
+  //the user is loaded in the database
+  db.loadDatabase()
+   db.find({}, function (err, users) {
+  //or res.send (delivery method)
+  res.json(users)
+});
 }
+
 
 //post 2 (från början)
 //wanna req the body
@@ -47,11 +58,20 @@ let user = req.body;
 }
 
 function getIdUsers(req, res) {
-  const { id } = req.params;
+  /*const { id } = req.params;
 
   const foundUsers = users.find((user) => user.id == id);
 
-  res.send(foundUsers);
+  res.send(foundUsers);*/
+  db.loadDatabase() 
+  // changed the id to the email (the key how i want to identify)
+  const { useremail } = req.params;
+  db.find({ email: useremail}, function (err, emails) {
+
+    res.json(emails)
+
+  });
+
 }
 
 function deleteUsers(req, res) {

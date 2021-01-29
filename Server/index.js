@@ -16,7 +16,11 @@ const matches = require ('./routes/matches.js');
 
 //changing input to json
 server.use(bodyParser.json());   //use rroutes for example 
-//server.use(express.static(path.join(__dirname, '../View')));
+server.use(express.static(path.join(__dirname, '../View')));
+server.use(express.urlencoded({
+    extended:true
+
+}))
 
 //server.use(express.static('../View'));
 server.use('/users', user.router);
