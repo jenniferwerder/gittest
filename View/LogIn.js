@@ -5,29 +5,18 @@ function LogIn (){
   console.log(5)
   //$ = put in variable that we have declared earlier 
   //then = first get the result, then do what's inside the promise 
-  //fetch(`http://localhost:5000${email}`).then((response)=> response.json()).then(function(userInformation){
-  console.log(9)
+  fetch(`http://localhost:5000/users/${email}`).then((response)=> response.json()).then(function(userInformation){
+  alert ('hej')
   // err,email (should be user)
-  db.findone({ email: useremail}, function (err, emails) {
-
-    alert (emails)
-
-  });
-const Http = new XMLHttpRequest();
-const url='http://localhost:5000';
-Http.open("GET", 'http://localhost:5000/users/');
-Http.send();
-
-Http.onreadystatechange = (e) => {
-  console.log(Http.responseText)
-
  
+  });
 }
+
     //JSON is putting it into a json-array
     //=0 first element in the array 
     //.email = get the value of the email
     
-    if (userInformation[0].email==email && userInformation[0].password==password) {
+  /*  if (userInformation[0].email==email && userInformation[0].password==password) {
       console.log(19)
       //do login-function later on 
       //want to redirect to your homepage etc 
@@ -36,10 +25,10 @@ Http.onreadystatechange = (e) => {
     else {
       alert ("Wrong email or password")  
       console.log(21) 
-    }
+    }*/
 
   
-}
+
 
 
 /*function myFunction() {
@@ -80,4 +69,4 @@ Http.onreadystatechange = (e) => {
   }*/
 
  
-  
+

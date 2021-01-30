@@ -1,6 +1,6 @@
 //fetch = contact the API
 
-console.log('fegegeg')
+//console.log('fegegeg')
 function SignUp (){
 let email = document.getElementById('email').value;
 let password= document.getElementById('password').value;

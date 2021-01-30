@@ -58,15 +58,14 @@ let user = req.body;
 }
 
 function getIdUsers(req, res) {
+  const useremail  = req.params;
   /*const { id } = req.params;
 
   const foundUsers = users.find((user) => user.id == id);
-
   res.send(foundUsers);*/
   db.loadDatabase() 
   // changed the id to the email (the key how i want to identify)
-  const { useremail } = req.params;
-  db.find({ email: useremail}, function (err, emails) {
+  db.find({ email: useremail.email}, function (err, emails) {
 
     res.json(emails)
 
