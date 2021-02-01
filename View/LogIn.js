@@ -1,35 +1,51 @@
+    function LogIn (){
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+  var xhttp = new XMLHttpRequest()
+  xhttp.open('GET', 'http://localhost:5000/users/' + IDBCursor, true)
+  xhttp.setRequestHeader("content-Type", "application/json");
+  xhttp.send()
+  xhttp.responseType = "text"
+  xhttp.onload = function() {
+    location.replace("/View/editProfile.html")
+  }
 
-function LogIn (){
-  let email = document.getElementById("email").value;
-  let password = document.getElementById("password").value;
-  console.log(5)
+   /*const Http = new XMLHttpRequest();
+   const url=`http://localhost:5000/users/${email}`;
+   Http.open("GET", url);
+   Http.setRequestHeader("Content-Type", "application/json");
+   Http.send();
+     
+   Http.onload = (e) => {
+   
+   }*/
+    
   //$ = put in variable that we have declared earlier 
   //then = first get the result, then do what's inside the promise 
-  fetch(`http://localhost:5000/users/${email}`).then((response)=> response.json()).then(function(userInformation){
-  alert ('hej')
-  // err,email (should be user)
- 
-  });
-}
-
-    //JSON is putting it into a json-array
-    //=0 first element in the array 
-    //.email = get the value of the email
-    
-  /*  if (userInformation[0].email==email && userInformation[0].password==password) {
-      console.log(19)
+  
+  /*fetch(`http://localhost:5000/users/${email}`).then((resp) => resp.json()).then(function(userInformation){
+    console.log (resp)
+  
+    if (userInformation[0].email==email && userInformation[0].password==password) {
+     
       //do login-function later on 
       //want to redirect to your homepage etc 
       window.location.href="profilePage.html" 
     }  
     else {
       alert ("Wrong email or password")  
-      console.log(21) 
-    }*/
-
+     
+    }
   
+  });*/
 
 
+//}
+
+    //JSON is putting it into a json-array
+    //=0 first element in the array 
+    //.email = get the value of the email
+  
 
 /*function myFunction() {
 
@@ -68,5 +84,5 @@ function LogIn (){
     let password = new Array();
   }*/
 
- 
+    }
 
