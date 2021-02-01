@@ -23,8 +23,8 @@
   //$ = put in variable that we have declared earlier 
   //then = first get the result, then do what's inside the promise  var body = '{ID:2, Name:"test reqx"}';
 
-  /*var url = "http://localhost:5000/users/";
-  var init = {credentials:"include", method:"PATCH", headers:{"Accept":"application/json"}, body:body};
+  //var url = "http://localhost:5000/users/";
+  //var init = {credentials:"include", method:"PATCH", mode:"no-cors", headers:{"Accept":"application/json"}, body:body};
   fetch(`http://localhost:5000/users/${email}`).then((resp) => resp.json()).then(function(userInformation){
     console.log (resp)
   
@@ -39,9 +39,9 @@
      
     }
   
-  });*/
+  });
 
-  fetch(`http://localhost:5000/users/${email}`)
+  /*fetch(`http://localhost:5000/users/${email}`)
   .then(response => {
     if (!response.ok) {
       throw new Error('Network response was not ok');
@@ -54,7 +54,7 @@
   })
   .catch((error) => {
     console.error('Error:', error);
-  });
+  });*/
 //}
 
     //JSON is putting it into a json-array
