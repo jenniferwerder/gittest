@@ -1,14 +1,14 @@
     function LogIn (){
     let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;
-  var xhttp = new XMLHttpRequest()
+  /*var xhttp = new XMLHttpRequest()
   xhttp.open('GET', 'http://localhost:5000/users/' + IDBCursor, true)
   xhttp.setRequestHeader("content-Type", "application/json");
   xhttp.send()
   xhttp.responseType = "text"
   xhttp.onload = function() {
     location.replace("/View/editProfile.html")
-  }
+  }*/
 
    /*const Http = new XMLHttpRequest();
    const url=`http://localhost:5000/users/${email}`;
@@ -21,9 +21,11 @@
    }*/
     
   //$ = put in variable that we have declared earlier 
-  //then = first get the result, then do what's inside the promise 
-  
-  /*fetch(`http://localhost:5000/users/${email}`).then((resp) => resp.json()).then(function(userInformation){
+  //then = first get the result, then do what's inside the promise  var body = '{ID:2, Name:"test reqx"}';
+
+  /*var url = "http://localhost:5000/users/";
+  var init = {credentials:"include", method:"PATCH", headers:{"Accept":"application/json"}, body:body};
+  fetch(`http://localhost:5000/users/${email}`).then((resp) => resp.json()).then(function(userInformation){
     console.log (resp)
   
     if (userInformation[0].email==email && userInformation[0].password==password) {
@@ -39,7 +41,20 @@
   
   });*/
 
-
+  fetch(`http://localhost:5000/users/${email}`)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json();
+  })
+   then(response => response.json())
+  .then(userInformation => {
+    console.log('Success:', userInformation);
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+  });
 //}
 
     //JSON is putting it into a json-array

@@ -3,6 +3,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const cors = require('cors');
+//maybe take row 7 away
+const app = express();
 
 //const router = express.Router();
 
@@ -25,7 +27,7 @@ const matches = require ('./routes/matches.js');
     }
   }*/
 //changing input to json
-//server.use (cors());
+server.use(cors())
 server.use(bodyParser.json());   //use rroutes for example 
 server.use(express.static(path.join(__dirname, '../View')));
 server.use(express.urlencoded({
