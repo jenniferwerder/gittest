@@ -1,5 +1,5 @@
 //server
-const express = require('express');
+const express = require('express'); //This does that
 const bodyParser = require('body-parser');
 const path = require('path');
 const cors = require('cors');
@@ -12,7 +12,7 @@ const server = express();
 const PORT = 5000;
 
 
-const user = require ('./routes/user.js');
+const user = require ('./routes/user.js'); // This does this
 const matches = require ('./routes/matches.js');
 //const interests = require('./routes/interests.js);
 
@@ -32,11 +32,10 @@ server.use(bodyParser.json());   //use rroutes for example
 server.use(express.static(path.join(__dirname, '../View')));
 server.use(express.urlencoded({
     extended:true
-
 }))
 
 //server.use(express.static('../View'));
-server.use('/users', user.router);
+server.use('/users', user.router); //Calls another code base
 server.use('/match', matches.router);
 server.use('/interest', user.router);
 

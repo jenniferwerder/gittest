@@ -1,103 +1,36 @@
-    function LogIn (){
-    let email = document.getElementById("email").value;
-    let password = document.getElementById("password").value;
-  /*var xhttp = new XMLHttpRequest()
-  xhttp.open('GET', 'http://localhost:5000/users/' + IDBCursor, true)
-  xhttp.setRequestHeader("content-Type", "application/json");
-  xhttp.send()
-  xhttp.responseType = "text"
-  xhttp.onload = function() {
-    location.replace("/View/editProfile.html")
-  }*/
+document.getElementById("btn").addEventListener("click", function (event) {
+  event.preventDefault();
 
-   /*const Http = new XMLHttpRequest();
-   const url=`http://localhost:5000/users/${email}`;
-   Http.open("GET", url);
-   Http.setRequestHeader("Content-Type", "application/json");
-   Http.send();
-     
-   Http.onload = (e) => {
-   
-   }*/
-    
-  //$ = put in variable that we have declared earlier 
-  //then = first get the result, then do what's inside the promise  var body = '{ID:2, Name:"test reqx"}';
+  let email = document.getElementById("email").value;
+  let password = document.getElementById("password").value;
 
-  //var url = "http://localhost:5000/users/";
-  //var init = {credentials:"include", method:"PATCH", mode:"no-cors", headers:{"Accept":"application/json"}, body:body};
-  fetch(`http://localhost:5000/users/${email}`).then((resp) => resp.json()).then(function(userInformation){
-    console.log (resp)
-  
-    if (userInformation[0].email==email && userInformation[0].password==password) {
-     
-      //do login-function later on 
-      //want to redirect to your homepage etc 
-      window.location.href="profilePage.html" 
-    }  
-    else {
-      alert ("Wrong email or password")  
-     
-    }
-  
-  });
+  console.log("asd");
 
-  /*fetch(`http://localhost:5000/users/${email}`)
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    return response.json();
+  fetch(`http://localhost:5000/users/${email}`, {
+    method:'GET',
+    redirect:'manual'
   })
-   then(response => response.json())
-  .then(userInformation => {
-    console.log('Success:', userInformation);
-  })
-  .catch((error) => {
-    console.error('Error:', error);
-  });*/
-//}
+    .then((resp) => resp.json())
+    .then(function (userInformation) {
+      console.log(userInformation);
 
-    //JSON is putting it into a json-array
-    //=0 first element in the array 
-    //.email = get the value of the email
-  
+      if (
+        userInformation[0].email == email &&
+        userInformation[0].password == password
+      ) {
+        rememberMe(email, password);
+        //do login-function later on
+        //want to redirect to your homepage etc
+        alert("User is correct")
+        //Figure out where to send the user aftwards
+        window.location.href = "profilePage.html";
+      } else {
+        alert("Wrong email or password");
+      }
+    })
+    .catch(err =>{
+      alert(err)
+    });
+});
 
-/*function myFunction() {
-
-    let email = document.getElementById("email").value;
-    let password = document.getElementById("password").value;
-    fetch(`http://localhost:5000/users${email}`)
-    .then(response => response.json()) //convert to JSON
-    .then(data) => {
-
-    if (document.getElementById("password") == password) {
-      alert ("success");
-    } else {
-        alert ("Invalid passord");
-
-      /*console.log("Failure");
-      console.log(password);
-      console.log(document.getElementById("password"));
-    }
-
-    fetch(`http://localhost:5000/user/${email}`)
-    .then((response) => response.json())
-    .then((data) => {
-     
-     
-    if (document.getElementById("password") == password) {
-        alert ("success");
-    } else {
-          alert ("Invalid passord");
-
-  function submission(){
-    let email = document.getElementByID = "email";
-    let password = document.getElementByID = "password";
-    
-  
-    let email = new Array();
-    let password = new Array();
-  }*/
-
-    }
-
+//function rememberMe
