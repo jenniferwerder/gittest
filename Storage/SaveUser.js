@@ -13,15 +13,15 @@ function insertNewUser (userInformation){
 
 }
 function removeNewUser (userId){
-db.remove({id:userId}, {}, function (err, numRemoved) {
+db.remove({email:userId}, {}, function (err, numRemoved) {
 
 });
 }
 
 function updateNewUser (newInformation){
     // "I want that precise key (or value)"
-    let userId = newInformation.id
-    db.remove({id:userId}, {}, function (err, numRemoved) {
+    let userId = newInformation.email
+    db.remove({email:userId}, {}, function (err, numRemoved) {
     
     });
     db.insert(newInformation, function (err, newUserInformation) {

@@ -10,8 +10,8 @@ const user = require ('../Controllers/user.js')
 router.get("/", user.getUsers); //This does this
 router.post("/", user.postUsers);
 router.get("/:email", user.getIdUsers);
-router.delete("/:id", user.deleteUsers);
-router.patch("/:id", user.patchUsers);
+router.delete("/:email", user.deleteUsers);
+router.patch("/:email", user.patchUsers);
 
  
 module.exports = {  //This does this

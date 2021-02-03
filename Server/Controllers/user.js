@@ -75,21 +75,21 @@ function getIdUsers(req, res) {
 }
 
 function deleteUsers(req, res) {
-  const { id } = req.params;
+  const { email } = req.params;
 
 //users = users.filter((user) => (user.id = !id));
-  database.removeNewUser(id)
+  database.removeNewUser(email)
 
-  res.send(`User with the id ${id} deleted from the database.`);
+  res.send(`User with the id ${email} deleted from the database.`);
 }
 //first one matches, returns it
 
 function patchUsers(req, res) {
-  const { id } = req.params;
+  const { email } = req.params;
   const userInformation = req.body;
 
   //combining this information with the other = one id
-  userInformation.id = id
+  userInformation.email = email
 
   database.updateNewUser(userInformation)
 

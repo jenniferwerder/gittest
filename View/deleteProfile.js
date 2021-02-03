@@ -26,3 +26,5 @@ fetch(`http://localhost:5000/users/${email}`, options)
        return false;
     }
 }*/
+
+})

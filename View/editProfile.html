@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -7,11 +7,11 @@
 
 </head>
 
-<body>
+<body data-gr-c-s-loaded = "true" data-feedly-mini = "yes">
   <h1>Golden Dating</h1>
   <!--TODO: Change form fields to the correct fields. Currently, I've just used some testing fields to ensure that data gets transfered from client to server.-->
   <!--TODO: This below should not use a full path, but a relative path. To change this, the html should be served in express.-->
-  <form action="http://localhost:5000/users" method="PATCH">
+  <form>
     <label for="firstName">First name:</label>
     <input type="text" id="firstName" name="firstName"><br><br>
     <label for="lastName">Last name:</label>
@@ -25,12 +25,13 @@
     <label for="age">Age:</label>
     <input type="text" id="age" name="age"><br><br>
 
-    <input type="submit" value="Submit"><br><br>
+    <input type="submit" value="Save"><br><br>
 
 
     <input type="button" value="My matches!" onclick="msg()">
     <input type="button" value="Start Swiping!" onclick="msg()">
   </form>
+  <script src="gettingProfile.js"></script> 
 </body>
 
 </html>

@@ -1,4 +1,4 @@
-functon myMatches () {
+/*functon myMatches () {
     let email = localStorage.getItem("email");
 
 
@@ -12,4 +12,4 @@ fetch(`http://localhost:5000/users/${email}`{
   .then(function (match) {
       console.log(match);
     }
-});
+});*/

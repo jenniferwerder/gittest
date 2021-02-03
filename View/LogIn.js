@@ -20,13 +20,13 @@ event.preventDefault();
         userInformation[0].password == password
 
       ) {
+        rememberMe(email, password);
         window.location.href = "editProfile.html";
         //want to redirect to your homepage etc
         alert("User is correct")
         //Figure out where to send the user aftwards
         //property, tell you the current URL location of the browser (redirects)
         
-
       } else {
         alert("Wrong email or password");
       }
@@ -37,6 +37,15 @@ event.preventDefault();
     });
 
   });
+
+  function rememberMe(email, password){
+    localStorage.setItem('email',email);
+    localStorage.setItem('password', password);
+  }
+
+
+
+
 /*A way of saving the log-in function with expire date
 
 //name, value, expire date
