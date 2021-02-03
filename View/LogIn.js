@@ -1,5 +1,6 @@
 document.getElementById("btn").addEventListener("click", function (event) {
-  event.preventDefault();
+// error in browser, waits until the i press "ok" 
+event.preventDefault();
 
   let email = document.getElementById("email").value;
   let password = document.getElementById("password").value;
@@ -17,20 +18,44 @@ document.getElementById("btn").addEventListener("click", function (event) {
       if (
         userInformation[0].email == email &&
         userInformation[0].password == password
+
       ) {
-        rememberMe(email, password);
-        //do login-function later on
+        window.location.href = "editProfile.html";
         //want to redirect to your homepage etc
         alert("User is correct")
         //Figure out where to send the user aftwards
-        window.location.href = "profilePage.html";
+        //property, tell you the current URL location of the browser (redirects)
+        
+
       } else {
         alert("Wrong email or password");
       }
     })
+    //catching errors after running through the code 
     .catch(err =>{
       alert(err)
     });
-});
 
-//function rememberMe
+  });
+/*A way of saving the log-in function with expire date
+
+//name, value, expire date
+Cookies.set("email", "true", {expires: 30});
+
+let myCookie = Cookies.get("coool");
+
+let email = document.querySelector("email")
+let password = document.querySelector("password")
+//if my cookie is true, in relation to the class
+if(myCookie){
+email.classList.add("cookie"),
+password.classList.add("cookie");
+
+}
+
+if(myCookie = "false"){
+  title.classList.remove("cookie");
+}*/
+
+
+
