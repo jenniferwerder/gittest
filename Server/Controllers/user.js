@@ -14,9 +14,7 @@ const { stringify } = require("querystring");
 const { countReset } = require('console');
 //import { user } from "../../Modul/user.js";
 
-//temporary database
-//let users = []
-//why dark diown (req)?
+
 
 //router 2 (från början)
 function getUsers(req, res) {  
@@ -86,12 +84,16 @@ function deleteUsers(req, res) {
 
 function patchUsers(req, res) {
   const { email } = req.params;
-  const userInformation = req.body;
+  //const userInformation = req.body;
+  const editProfile = req.body;
+
+  patchingUsers(email, editProfile);
+  res.send('Updated information!');
 
   //combining this information with the other = one id
-  userInformation.email = email
+  //userInformation.email = email
 
-  database.updateNewUser(userInformation)
+  //database.updateNewUser(userInformation)
 
 
   /*const user = users.find((user) => user.id == id);
@@ -100,7 +102,7 @@ function patchUsers(req, res) {
   if (lastName) user.lastName = lastName;
   if (age) user.age = age;*/
 
-  res.send(`User with the id ${id} has been updated`);
+  //res.send(`User with the id ${email} has been updated`);
 }
 
 //to do a function

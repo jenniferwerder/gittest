@@ -1,6 +1,3 @@
-//1. insert
-//2. delete 
-//3. update user 
 var Datastore = require ('nedb')
 , db = new Datastore ({ filename: '../Storage/UserInformation.db', autoload: true});
 
