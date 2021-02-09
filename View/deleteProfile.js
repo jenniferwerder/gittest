@@ -1,6 +1,6 @@
-document.getElementById("btn").addEventListener("click", function (event) {
+//document.getElementById("btn").addEventListener("click", function (event) {
 // error in browser, waits until the i press "ok" 
-event.preventDefault();
+//event.preventDefault();
     
 function DeleteAccount() {
 //when the login works, it wants it to send the ID back again
@@ -27,4 +27,3 @@ fetch(`http://localhost:5000/users/${email}`, options)
     }
 }*/
 
-})

@@ -1,10 +1,9 @@
 
 //userID??? ––– changed it to a huvudklass
 class match {
-    constructor(matchId1, matchId2, matchId) {
-        this.matchId = matchId;
-        this.matchId1 = matchId1;
-        this.matchId2 = matchId2;
+    constructor(email1, email2) {
+        this.email1 = email1;
+        this.email2 = email2;
         
 
     }

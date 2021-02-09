@@ -28,12 +28,11 @@ const matches = require ('./routes/matches.js');
   }*/
 //changing input to json
 server.use(cors())
-server.use(bodyParser.json());   //use rroutes for example 
+server.use(bodyParser.json());   //use routes for example 
 server.use(express.static(path.join(__dirname, '../View')));
 server.use(express.urlencoded({
     extended:true
 }))
-
 //server.use(express.static('../View'));
 server.use('/users', user.router); //Calls another code base
 server.use('/match', matches.router);
@@ -42,7 +41,6 @@ server.use('/interest', user.router);
 // added function
 server.get('/', (req, res) => { res.send('Hello from HomePage') });
 server.listen(PORT, () => console.log(`Server running on port: http://localhost:${PORT}`));
-
 
 
 

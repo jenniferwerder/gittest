@@ -1,23 +1,19 @@
 const express = require ('express');
 const router = express.Router();
+const app = express();
+//maybe take cors away (line 5)
+const cors = require('cors');
+const matches = require ('../Controllers/matches.js')
 
 
-const match = require ('../Controllers/matches.js')
+//starting with user, already been declated in the index file
+router.get("/", matches.getAllMatches); 
+router.post("/", matches.postMatch);
+router.get("/:email", matches.getMatch);
+router.delete("/:email",matches.deleteMatch);
 
+ 
+module.exports = {  
+    router,
 
-
-router.get("/", match.getMatch);
-router.post("/", match.postMatch);
-router.get("/:id", match.getIdMatch);
-router.delete("/:id", match.deleteMatch);
-//router.patch("/:id", patchMatch);
-
-
-
-module.exports = {
-router,
 }
-
-
-//import * as match from '../Controllers/matches.js';
-//import {getMatch, postMatch, getIdMatch, deleteMatch, patchMatch} from '../Controllers/matches.js';

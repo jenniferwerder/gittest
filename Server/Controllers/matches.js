@@ -1,55 +1,83 @@
-//import express from 'express'; 
-// creates the string/library/the name refers to it/popular id
-//instad of using "const match[]"
-//import * as fs from 'fs';
+var Datastore = require ('nedb')
+, db = new Datastore ({ filename: '../Storage/SaveMatches.db', autoload: false});
 
-const fs = require ('fs');
-//let usersStorage = fs.readFileSync('./Storage/json.json', "utf8"); 
-//let matches = JSON.parse(usersStorage);
+const fs = require("fs");
+const database = require('../../Storage/SaveMatches.js')
 
-const { v4: uuidv4 } = require ('uuid');
-//import { match } from '../../Modul/match';
+//let usersStorage = fs.readFileSync("../Storage/json.json", "utf8");
+//let users = JSON.parse(usersStorage);
+
+let user = require("../../Modul/match.js");
+//import { json } from "body-parser";
+const { v4: uuidv4 } = require("uuid");
+const { stringify } = require("querystring");
+const { countReset } = require('console');
+const { match } = require('assert');
+//import { user } from "../../Modul/user.js";
 
 
-function getMatch (req, res) {
-  //console.log(match);
-  res.send(match);
-  };
+
+//router 2 (från början)
+function getAllMatches(req, res) {  
+  /*Rename this to getUsers
+  console.log(users);
+  res.send(users);*/
+  //load data everytime, it must see if you get a new user etc --> get function 
+  //why not in the database? --> transfer information (optimal, it would be with the others)
+  //the user is loaded in the database
+  db.loadDatabase()
+   db.find({}, function (err, match) {
+  //or res.send (delivery method)
+  res.json(match)
+});
+}
+
+
+//post 2 (från början)
+//wanna req the body
+function postMatch(req, res) {
   
-function postMatch (req, res) {
-  const match = req.body;
-  const matchWithId = {...match, id: uuidv4()}; //matchwithID
-  match.push({ ...match, id: uuidv4() }); //or MATCHES instead?
-  res.send(posted);
+let match = req.body;
+ 
+ console.log(req.body)
+  database.insertNewMatch(match)
+  res.send(`This works!`);
+}
 
-  res.send(`User with the id ${match} added to the database!`);
-   
-};
+function getMatch(req, res) {
+  const userEmail  = req.params;
+  /*const { id } = req.params;
 
-function getIdMatch (req, res) {
-  const { id } = req.params;
+  const foundUsers = users.find((user) => user.id == id);
+  res.send(foundUsers);*/
+  db.loadDatabase() 
+  // changed the id to the email (the key how i want to identify)
+  db.find({email1: userEmail.email1}, function (err, emails) {
 
-  const foundMatch = matches.find((match) => match.id == id);
+    res.json(emails)
 
-  res.send(foundUser);
+  });
 
 }
 
- function deleteMatch (req, res) {
-    const { id } = req.params;
-  
-    matches = matches.filter((match) => (match.id = !id));
-  
-    res.send(`User with the idMatch ${id} deleted from the database.`);
-  };
+function deleteMatch(req, res) {
+  const { email } = req.params;
+
+//users = users.filter((user) => (user.id = !id));
+  database.removeNewMatch(email)
+
+  res.send(`User with the id ${email} deleted from the database.`);
+}
+//first one matches, returns it
 
 
-  module.exports = {
-    getMatch, 
-    postMatch, 
-    getIdMatch, 
-    deleteMatch 
-  };
+//to do a function
+module.exports = {
+  getAllMatches,
+  postMatch,
+  getMatch,
+  deleteMatch
+};
 
 
 
