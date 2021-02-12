@@ -1,8 +1,3 @@
-/*const fs = require ('fs')
-// is this correct?
-let rawdata = fs.readFileSync('json.json')
-let json = JSON.parse(rawdata);*/
-
 class user {
     constructor (firstName, lastName, phoneNumber, age, gender, email, location, work, education, interestsGender){
     //define them, they are thrown away from the constructor

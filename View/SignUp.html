@@ -2,15 +2,14 @@
 <html>
 
 <head>
-  <!---name=access endpoints-->
+
   <link rel="stylesheet" href="SignUp.css">
 
 </head>
 
 <body>
   <h1>Golden Dating</h1>
-  <!--TODO: Change form fields to the correct fields. Currently, I've just used some testing fields to ensure that data gets transfered from client to server.-->
-  <!--TODO: This below should not use a full path, but a relative path. To change this, the html should be served in express.-->
+ 
   <form action="http://localhost:5000/users" method="POST">
     <label for="firstName">First name:</label>
     <input type="text" id="firstName" name="firstName"><br><br>

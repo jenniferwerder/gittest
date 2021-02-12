@@ -1,7 +1,6 @@
 const express = require ('express');
 const router = express.Router();
 const app = express();
-//maybe take cors away (line 5)
 const cors = require('cors');
 const matches = require ('../Controllers/matches.js')
 

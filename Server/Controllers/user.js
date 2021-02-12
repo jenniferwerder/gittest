@@ -8,60 +8,35 @@ let usersStorage = fs.readFileSync("../Storage/json.json", "utf8");
 let users = JSON.parse(usersStorage);
 
 let user = require("../../Modul/user.js");
-//import { json } from "body-parser";
 const { v4: uuidv4 } = require("uuid");
 const { stringify } = require("querystring");
 const { countReset } = require('console');
-//import { user } from "../../Modul/user.js";
+
 
 
 
 //router 2 (från början)
 function getUsers(req, res) {  
-  /*Rename this to getUsers
-  console.log(users);
-  res.send(users);*/
-  //load data everytime, it must see if you get a new user etc --> get function 
-  //why not in the database? --> transfer information (optimal, it would be with the others)
-  //the user is loaded in the database
+ 
   db.loadDatabase()
    db.find({}, function (err, users) {
-  //or res.send (delivery method)
-  res.json(users)
+   res.json(users)
 });
 }
 
-
-//post 2 (från början)
-//wanna req the body
 function postUsers(req, res) {
-  //console.log(req)
-  //let user = 
-   
-    /*firstName = req.body.firstName,
-    lastName = req.body.lastName,
-    email = req.body.email,
-    password = req.body.password,
-    cpr = req.body.cpr,
-    age = req.body.age 
-  }*/
+
 let user = req.body;
  user['id'] = uuidv4()
- //user ['firstName'] = req.body.firstName
-  //make an extra id, and push it in
-  /*users.push({ ...user });
-  console.log(users);*/
- console.log(req.body)
+ 
+  console.log(req.body)
   database.insertNewUser(user)
   res.send(`User with the username ${user.firstName} and i ${user.id} added to the database!`);
 }
 
 function getIdUsers(req, res) {
   const useremail  = req.params;
-  /*const { id } = req.params;
-
-  const foundUsers = users.find((user) => user.id == id);
-  res.send(foundUsers);*/
+  
   db.loadDatabase() 
   // changed the id to the email (the key how i want to identify)
   db.find({email: useremail.email}, function (err, emails) {
@@ -80,32 +55,17 @@ function deleteUsers(req, res) {
 
   res.send(`User with the id ${email} deleted from the database.`);
 }
-//first one matches, returns it
 
+//returning first match
 function patchUsers(req, res) {
   const { email } = req.params;
-  //const userInformation = req.body;
   const editProfile = req.body;
 
   patchingUsers(email, editProfile);
   res.send('Updated information!');
 
-  //combining this information with the other = one id
-  //userInformation.email = email
-
-  //database.updateNewUser(userInformation)
-
-
-  /*const user = users.find((user) => user.id == id);
-
-  if (firstName) user.firstName = firstName;
-  if (lastName) user.lastName = lastName;
-  if (age) user.age = age;*/
-
-  //res.send(`User with the id ${email} has been updated`);
 }
 
-//to do a function
 module.exports = {
   getUsers,
   postUsers,
@@ -116,7 +76,3 @@ module.exports = {
 
 
 
-
-//WHERE YOU LOG IN IMPLEMENT COOKIES FOR CLIENT STORAGE
-//HINT: RES.COOKIE? 
-//YOYU CAN STORE USERNAME OR PASSWORD IN COOKIE OR SOMTH
