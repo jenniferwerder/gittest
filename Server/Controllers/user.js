@@ -4,8 +4,8 @@ var Datastore = require ('nedb')
 const fs = require("fs");
 const database = require('../../Storage/SaveUser.js')
 
-let usersStorage = fs.readFileSync("../Storage/json.json", "utf8");
-let users = JSON.parse(usersStorage);
+//let usersStorage = fs.readFileSync("../Storage/json.json", "utf8");
+//let users = JSON.parse(usersStorage);
 
 let user = require("../../Modul/user.js");
 const { v4: uuidv4 } = require("uuid");
